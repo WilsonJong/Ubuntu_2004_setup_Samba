@@ -37,14 +37,19 @@ sudo service smbd restart
 ```
 sudo ufw allow samba
 ```
-
-### 7. Add user to access the Samba service.
+### 7. Allow the system user to access Samba service.
 ```
-sudo smbpasswd -a < username>
+sudo smbpasswd -a <systemUserName>
+```
+
+### 8. Add user to access the Samba service.
+```
+sudo adduser [username]
+sudo smbpasswd -a <username>
 
 * After added the new user, Samba service need to restart by using command in step 5.
 ```
-### 8. Connect Samba service from a Windows machine.
+### 9. Connect Samba service from a Windows machine.
 ```
 //targetIP/sambashare
 ```
